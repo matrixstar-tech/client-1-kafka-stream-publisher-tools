@@ -1,0 +1,30 @@
+server.port: 9296
+spring.cloud.stream:
+  bindings:
+    process-out-0:
+      destination: ep_cp_glow_zhanw28_raw_source_1
+      content-type: application/*+json
+  kafka:
+    binder:
+      brokers: localhost:9092
+      producer-properties:
+        '[key.serializer]': org.apache.kafka.common.serialization.StringSerializer
+        #key.serializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+        '[value.serializer]': org.springframework.kafka.support.serializer.JsonSerializer
+      configuration:
+        #'[spring.kafka.producer.properties.spring.json.add.type.headers]': false
+        '[schema.registry.url]': http://localhost:8081
+          
+logging:
+  file:
+    name: kafka-stream-tool.log
+    max-history: 7
+    max-size: 50MB
+  level:
+    root: INFO
+    '[com.td.pwssp.kafka.stream]': TRACE
+    org:
+      springframework: INFO 
+  pattern:
+    file: .%clr(%d{yyyy-MMM-dd HH:mm:ss.SSS}){Green} %-5level [%thread] %logger{15} - %msg%n
+    console: .%clr(%d{yyyy-MMM-dd HH:mm:ss.SSS}){Green} %-5level [%thread] %logger{15} - %msg%n  
