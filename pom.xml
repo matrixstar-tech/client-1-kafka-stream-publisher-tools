@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.wz.tool</groupId>
-    <artifactId>kafakStreamTools</artifactId>
+    <artifactId>client-1-kafak-stream-publisher-tools</artifactId>
     <version>1.0.0</version>
     <name>kafakStreamTools</name>
     <description>Tools for Kafka Stream</description>
