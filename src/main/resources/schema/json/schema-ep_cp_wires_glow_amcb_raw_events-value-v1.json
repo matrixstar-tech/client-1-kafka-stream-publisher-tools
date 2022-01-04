@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "definitions": {
+    "OrgnlGrpInf": {
+      "additionalProperties": false,
+      "properties": {
+        "OrgnlMsgId": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "OrgnlMsgNmId": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "RvslRsnInf": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/RvslRsnInf"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "OrgnlPmtInfAndRvsl": {
+      "additionalProperties": false,
+      "properties": {
+        "OrgnlPmtInfId": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "TxInf": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/TxInf"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "Rsn": {
+      "additionalProperties": false,
+      "properties": {
+        "Prtry": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "RvsdInstdAmt": {
+      "additionalProperties": false,
+      "properties": {
+        "Amt": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "Ccy": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "RvslRsnInf": {
+      "additionalProperties": false,
+      "properties": {
+        "AddtlInf": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "Rsn": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/Rsn"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "TxInf": {
+      "additionalProperties": false,
+      "properties": {
+        "OrgnlEndToEndId": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "RvsdInstdAmt": {
+          "oneOf": [
+            {
+              "title": "Not included",
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/RvsdInstdAmt"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    }
+  },
+  "properties": {
+    "OrgnlGrpInf": {
+      "oneOf": [
+        {
+          "title": "Not included",
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/OrgnlGrpInf"
+        }
+      ]
+    },
+    "OrgnlPmtInfAndRvsl": {
+      "oneOf": [
+        {
+          "title": "Not included",
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/OrgnlPmtInfAndRvsl"
+        }
+      ]
+    }
+  },
+  "title": "Customer Payment Reversal",
+  "type": "object"
+}
